@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/csinchok/imgmin-go.png?branch=master)](https://travis-ci.org/csinchok/imgmin-go)
+
 This is a work-in-progress golang port of the [imgmin](https://github.com/rflynn/imgmin/) package.
 
 The current tests just check to make sure that we get the same results as the C version.
