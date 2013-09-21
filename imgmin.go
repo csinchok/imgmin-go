@@ -5,7 +5,7 @@ import (
     "math"
     "os"
     "io/ioutil"
-    "github.com/gographics/imagick/imagick"
+    "github.com/rafikk/imagick/imagick"
 )
 
 var (

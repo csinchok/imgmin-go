@@ -2,7 +2,7 @@ package imgmin
 
 import (
     "testing"
-    "github.com/gographics/imagick/imagick"
+    "github.com/rafikk/imagick/imagick"
 )
 
 func TestSearchQuality(t *testing.T) {
@@ -50,7 +50,6 @@ func TestSearchQuality(t *testing.T) {
     if err != nil {
         t.Error(err.Error())
     }
-    out.WriteImage("examples/after-go.jpg")
     if out.GetImageCompressionQuality() != 71 {
         t.Errorf("Quality on 'Study_Psychotic.jpg' should be 71, is %d", out.GetImageCompressionQuality())
     }

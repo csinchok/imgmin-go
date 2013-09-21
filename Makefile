@@ -4,7 +4,7 @@ all: reqs bindata build clean
 
 reqs:
 	@echo "\x1b[31;1mGetting dependencies...\x1b[0m"
-	go get github.com/gographics/imagick/imagick
+	go get github.com/rafikk/imagick/imagick
 
 
 build:
