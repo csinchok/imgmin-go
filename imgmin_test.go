@@ -16,7 +16,7 @@ func TestSearchQuality(t *testing.T) {
     if err != nil {
         t.Error(err.Error())
     }
-    out, err = SearchQuality(mw)
+    out, err = SearchQuality(mw, Options{})
     if err != nil {
         t.Error(err.Error())
     }
@@ -31,7 +31,7 @@ func TestSearchQuality(t *testing.T) {
     if err != nil {
         t.Error(err.Error())
     }
-    out, err = SearchQuality(mw)
+    out, err = SearchQuality(mw, Options{})
     if err != nil {
         t.Error(err.Error())
     }
@@ -46,7 +46,7 @@ func TestSearchQuality(t *testing.T) {
     if err != nil {
         t.Error(err.Error())
     }
-    out, err = SearchQuality(mw)
+    out, err = SearchQuality(mw, Options{})
     if err != nil {
         t.Error(err.Error())
     }
@@ -54,4 +54,33 @@ func TestSearchQuality(t *testing.T) {
         t.Errorf("Quality on 'Study_Psychotic.jpg' should be 71, is %d", out.GetImageCompressionQuality())
     }
 
+    mw.Destroy()
+    mw = imagick.NewMagickWand()
+
+    err = mw.ReadImage("examples/Blue-Marble.jpg")
+    if err != nil {
+        t.Error(err.Error())
+    }
+    out, err = SearchQuality(mw, Options{})
+    if err != nil {
+        t.Error(err.Error())
+    }
+    if out.GetImageCompressionQuality() != 82 {
+        t.Errorf("Quality on 'Blue-Marble.jpg' should be 82, is %d", out.GetImageCompressionQuality())
+    }
+
+    mw.Destroy()
+    mw = imagick.NewMagickWand()
+
+    err = mw.ReadImage("examples/VJ-Day-Kiss-Jorgensen.jpg")
+    if err != nil {
+        t.Error(err.Error())
+    }
+    out, err = SearchQuality(mw, Options{})
+    if err != nil {
+        t.Error(err.Error())
+    }
+    if out.GetImageCompressionQuality() != 90 {
+        t.Errorf("Quality on 'VJ-Day-Kiss-Jorgensen.jpg' should be 90, is %d", out.GetImageCompressionQuality())
+    }
 }
