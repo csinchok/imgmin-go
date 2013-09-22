@@ -1,7 +1,6 @@
 package imgmin
 
 import (
-    "log"
     "math"
     "os"
     "io/ioutil"
@@ -153,7 +152,7 @@ func SearchQuality(mw *imagick.MagickWand, opts Options) (*imagick.MagickWand, e
         } else {
             qMax = q
         }
-        log.Printf("%.2f/%.2f@%d", error, densityRatio, q)
+        // log.Printf("%.2f/%.2f@%d ", error, densityRatio, q)
     }
     return tmp, nil
 }
